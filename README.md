@@ -6,3 +6,4 @@ The purpose of this post is to showcase the scatter plots of a few weather chara
 
 ![Screenshot-1](/snapshot1.PNG)
 
+
