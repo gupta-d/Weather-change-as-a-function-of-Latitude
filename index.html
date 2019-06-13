@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+
+	  <meta charset="UTF-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	  <title>Weather Vs Latitude</title>
+	  <!-- Bootstrap CSS -->
+	  
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	  
+	  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 	
+	  <link rel="stylesheet" href="style.css">
+
+	</head>
+
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <a class="navbar-brand" href="index.html"><b>Lattitude</b></a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		  	<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+		    <ul class="navbar-nav ml-auto">
+<!-- 		      <li class="nav-item active">
+		        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+		      </li> -->
+		      <li class="nav-item">
+		        <a class="nav-link" href="data.html">Data</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="comparison.html">Comparison</a>
+		      </li>
+		      <li class="nav-item dropdown">
+		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Plots</a>
+		        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+		          <a class="dropdown-item" href="temp.html">Temperature</a>
+		          <a class="dropdown-item" href="humidity.html">Humidity</a>
+		          <a class="dropdown-item" href="windspeed.html">Wind Speed</a>
+		          <a class="dropdown-item" href="cloudiness.html">Cloudiness</a>
+		        </div>
+		      </li>
+		    </ul>
+		  </div>
+		</nav
+	</div>
+
+
+
+    <header id = 'page1'>
+    	<h2></h2>
+  	</header>
+
+  			<body>
+			  	<div class="container">
+			    <!--Normally these medium columns go full wide on small screen sizes-->
+			    	<div class="row">
+			    		
+			      		<div class="col-md-8 jumbotron">
+			      			 <section id="abc">
+			      			 	<section id ="pqr">
+
+				      			<header>
+								  	<h2><b>Weather vs. Latitude</b></h2>
+								</header>
+			      		
+			        			<figure class="figure">
+<!-- 			        			<a href="temp.html"> -->
+			  					<img src = "output_data/Latitude_vs_MaxTemp.png" alt="Latitude vs. Temp", class="img-thumbnail", class="figure-img img-fluid rounded">
+
+			 			 		<figcaption class="figure-caption"><b>Temperature as a function of latitude.</b></figcaption>
+								</figure>
+							</section>
+
+			      			<!-- <h4><b><u>Overview</u></b></h4> -->
+			        		<p>Almost everyone knows that ambient temperature incfreases as we move towards equator. However very few would be aware of linkage to other weather attributes e.g. humidity, cloudiness and windspeed. </p>
+			        		<p>The purpose of this post is to showcase the scatter plots of a few weather characteristics from actual weather conditions at randomly selected cities across the globe. Lets see if we could spot a pattern. </p>
+			        		
+
+					  	    <h4><b><u>Our approach</u></b></h4>
+
+	        				<p>
+	        				<ul>
+								<li>Randomly select 500+ unique pairs of latitude and longitude using python's random module.</li>
+								<li>Find a city nearest to each lat/long co-ordinate in our randomly generated data. This task can be accomplished by a relevant library e.g. 'citipy' library at PyPy, that basically uses a database of 46K cities to generate a KDTree object and find nearest neighbour. I have created my own custom code, using data of ~ 200K cities covered by openweather.com, I used KDTree function from scipy to make a custom tree and implement search for nearest city given a random lat/long. Cartesian 3D co-ordinates were used for distance calculation.</li>
+								<li>Perform latest weather check on each of the cities using a series of API calls using openweathermap.org API. Save the results  in a pandas dataframe.</li>
+								<li>Plot desired scatter plots using matplotlib.</li>
+ 							</ul>
+							</p>
+
+							<p><b>Link to my github repo:</b> 
+								<a href="https://github.com/gupta-d/Weather-Latitude-correlation">python code for collecting and analyzing weather data using openweather.com API's. </a>
+							</p>
+	        					
+	        				</section>
+
+					  	  </div>
+
+					  	  
+					  	
+			      		
+
+			      		
+			      		<div class="col-md-4">
+			      			<div class="container">
+
+		    			  		<div class="container">
+		    						<div class="row">
+		    							<div class="col-sm-12 col-md-12">
+			      							<h3><b><u>Visualizations</u></b></h3>
+			      						</div>
+
+
+				    					<div class="row jumbotron">
+					      						<div class="col-sm-3 col-md-6">
+						 			 					<a href="temp.html">
+									 			 		<img src="output_data/Latitude_vs_MaxTemp.png" alt="Max Temperature Variation", class="img-thumbnail", class="figure-img img-fluid rounded">
+									 			 		</a>
+									 			 		<figcaption class="figure-caption"><b>Temperature</b></figcaption>
+												</div>
+
+												<div class="col-sm-3 col-md-6">
+									 			 		<a href="humidity.html">
+									 			 		<img src="output_data/Latitude_vs_Humidity.png" alt="Humidity Variation", class="img-thumbnail", class="figure-img img-fluid rounded">
+									 			 		</a>
+									 			 		<figcaption class="figure-caption"><b>Humidity</b></figcaption>
+					      						</div>
+
+									
+
+					      						<div class="col-sm-3 col-md-6">
+					      						 		<a href="cloudiness.html">
+									 			 		<img src="output_data/Latitude_vs_Cloudiness.png" alt="Cloudiness Variation", class="img-thumbnail", class="figure-img img-fluid rounded">
+									 			 		</a>
+						 			 					<figcaption class="figure-caption"><b>Cloudiness</b></figcaption>
+						 			 			</div>
+
+						 			 			<div class="col-sm-3 col-md-6">
+									 			 		<a href="windspeed.html">
+									 			 		<img src="output_data/Latitude_vs_Windspeed.png" alt="Windspeed Variation", class="img-thumbnail", class="figure-img img-fluid rounded">
+									 			 		</a>
+						 			 					<figcaption class="figure-caption"><b>Windspeed</b></figcaption>
+												</div>
+
+		                                </div>
+								</div>
+							</div>
+					</div>
+				</div>
+
+
+
+	    	</body>
+
+
+  
+</html>
