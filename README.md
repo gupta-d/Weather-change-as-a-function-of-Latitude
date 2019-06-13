@@ -4,3 +4,5 @@ Almost everyone knows that ambient temperature incfreases as we move towards equ
 
 The purpose of this post is to showcase the scatter plots of a few weather characteristics from actual weather conditions at randomly selected cities across the globe. Lets see if we could spot a pattern.
 
+![Screenshot-1](/snapshot1.PNG)
+
